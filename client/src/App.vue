@@ -7,7 +7,8 @@ const addProduct = reactive({
   name: '',
   description: '',
   price: 0,
-  stock: 0
+  stock: 0,
+  category_id: null
 })
 
 const handleSubmit = async () => {
@@ -24,6 +25,7 @@ const handleSubmit = async () => {
       addProduct.description = ''
       addProduct.price = 0
       addProduct.stock = 0
+      addProduct.category_id = null
       await getProduct()
     }
   } catch (error) {
@@ -52,20 +54,20 @@ onMounted(() => {
 
 <template>
   <div>
-    <h1 class="text-zinc-200 text-3xl mb-4">LISTA DE PRODUCTOS</h1>
-    <button class="bg-green-500 rounded-lg px-3 py-2 mb-4">Agregar</button>
+    <h1 class="text-zinc-200 text-3xl mb-4 uppercase font-bold">LISTA DE PRODUCTOS</h1>
+    <button class="bg-green-500 rounded-lg px-3 py-2 mb-4 text-white">Agregar</button>
 
     <div class="flex justify-between bg-zinc-800 p-3 text-zinc-300">
-      <span class="w-1/4">Nombre</span>
-      <span class="w-1/4">Descripción</span>
-      <span class="w-1/4 text-center">Precio</span>
-      <span class="w-1/4 text-right">Stock</span>
+      <span class="w-1/4 font-bold">Nombre</span>
+      <span class="w-1/4 font-bold">Descripción</span>
+      <span class="w-1/4 text-center font-bold">Precio</span>
+      <span class="w-1/4 text-right font-bold">Stock</span>
     </div>
 
     <div 
       v-for="p in products"
       :key="p.product_id"
-      class="flex justify-between bg-zinc-800 p-3 text-zinc-200"
+      class="flex justify-between bg-zinc-800 p-3 text-zinc-200 border-t border-zinc-700"
     >
       <ItemList 
         :name="p.name"
@@ -77,8 +79,7 @@ onMounted(() => {
 
     <hr class="my-8 border-zinc-700">
 
-    <!-- Formulario -->
-    <form @submit.prevent="handleSubmit" class="flex flex-col gap-4 max-w-lg">
+    <form @submit.prevent="handleSubmit" class="flex flex-col gap-4 max-w-lg text-zinc-200">
       <h1 class="text-3xl font-bold">Agregar Producto</h1>
       
       <input 
@@ -111,15 +112,22 @@ onMounted(() => {
         >
       </div>
 
+      <input 
+        v-model.number="addProduct.category_id" 
+        type="number" 
+        placeholder="ID de Categoría" 
+        class="p-2 rounded-lg bg-zinc-800 flex-1"
+      >
+
       <button 
         type="submit"
-        class="bg-green-500 rounded-lg px-3 py-2"
+        class="bg-green-500 rounded-lg px-3 py-2 font-bold text-white"
       >
         Guardar Producto
       </button>
     </form>
 
-    <pre class="mt-8 p-4 rounded text-xs">
+    <pre class="mt-8 p-4 text-xs">
       {{ addProduct }}
     </pre>
   </div>
