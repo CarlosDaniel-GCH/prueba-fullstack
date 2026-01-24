@@ -127,6 +127,7 @@ onMounted(() => {
       </button>
     </form>
 
+    <!-- Previsualizacion -->
     <pre class="mt-8 p-4 text-xs">
       {{ addProduct }}
     </pre>
