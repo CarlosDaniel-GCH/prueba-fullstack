@@ -93,13 +93,15 @@ class ProductController extends Controller
             ], 404);
         }
 
-        $product = Product::update([
+        $product->update([
             $product->name = $request->name,
             $product->description = $request->description,
             $product->price = $request->price,
             $product->stock = $request->stock,
             $product->category_id = $request->category_id,
         ]);
+
+        $product->save();
 
         if(!$product){
             return response()->json([
