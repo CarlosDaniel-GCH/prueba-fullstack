@@ -18,3 +18,10 @@ Prueba tecnica laravel Full Stack + Vue.js para Overskull
 2. Dependencias: composer install
 3. Migraciones: php artisan migrate
 4. Servidor: php artisan serve
+
+
+### Puntos que faltaron
+- [ ] Desplegar formulario al hacerle click al boton de agregar
+- [ ] Mejorar los estilos de la tabla
+- [ ] Funcion para listar categorias
+- [ ] Agregarle Toast despues de cada accion
