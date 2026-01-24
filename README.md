@@ -25,3 +25,4 @@ Prueba tecnica laravel Full Stack + Vue.js para Overskull
 - [ ] Mejorar los estilos de la tabla
 - [ ] Funcion para listar categorias
 - [ ] Agregarle Toast despues de cada accion
+- [ ] Separar las funciones en una carpeta services
