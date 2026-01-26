@@ -38,7 +38,8 @@ class ProductController extends Controller
             'name' => 'required|string',
             'description' => 'nullable|string|max:300',
             'price' => 'required|decimal:0,2',
-            'stock' => 'required|integer'
+            'stock' => 'required|integer',
+            'category_id' => 'required|exists:category,category_id'
         ]);
 
         if($validate->fails()){
@@ -82,7 +83,8 @@ class ProductController extends Controller
             'name' => 'required|string',
             'description' => 'nullable|string|max:300',
             'price' => 'required|decimal:0,2',
-            'stock' => 'required|integer'
+            'stock' => 'required|integer',
+            'category_id' => 'required|exists:category,category_id'
         ]);
 
         if($validate->fails()){
