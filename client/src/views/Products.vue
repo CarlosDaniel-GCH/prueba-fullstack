@@ -57,6 +57,28 @@ const getProduct = async () => {
     }
 }
 
+const manejarEditar = (producto) => {
+    console.log("Abriendo modal para editar...");
+    // Aquí pondrías la lógica para editar
+};
+
+const manejarEliminar = async (id) => {
+    try{
+        const API_URL = `http://localhost:8000/api/product/${id}`
+        const response = await fetch(API_URL, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        if(!response.ok) throw new Error("Error en la peticion")
+        products.value = products.value.filter(p => p.product_id !== id);
+    }
+    catch(error){
+        console.log("Fallo en la operacion: ", error)
+    }
+};
+
 onMounted(() => {
     getProduct()
 })
@@ -82,7 +104,14 @@ onMounted(() => {
 
             <div v-for="p in products" :key="p.product_id"
                 class="flex items-center justify-between bg-zinc-800 p-4 text-zinc-200 border-t border-zinc-700 hover:bg-zinc-700/30 transition-colors">
-                <ItemList :name="p.name" :description="p.description" :price="p.price" :stock="p.stock" />
+                <ItemList 
+                    :name="p.name" 
+                    :description="p.description" 
+                    :price="p.price" 
+                    :stock="p.stock"
+                    @edit="manejarEditar"
+                    @delete="manejarEliminar(p.product_id)"
+                />
             </div>
         </div>
 
