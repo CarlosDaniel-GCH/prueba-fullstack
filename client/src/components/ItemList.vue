@@ -10,11 +10,11 @@ defineEmits(['edit', 'delete'])
 </script>
 
 <template>
-    <span class="w-1/5 font-semibold text-green-400 truncate pr-2">
+    <span class="flex justify-center w-1/5 font-semibold text-green-400 truncate pr-2">
         {{ name }}
     </span>
 
-    <span class="w-1/5 text-zinc-400 text-sm truncate pr-4">
+    <span class="flex justify-center w-1/5 text-zinc-400 text-sm truncate pr-4">
         {{ description || 'Sin descripción' }}
     </span>
 
