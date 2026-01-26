@@ -157,7 +157,8 @@ onMounted(() => {
                 <span class="w-1/5 flex justify-center">Editar / Eliminar</span>
             </div>
 
-            <div v-for="p in products" :key="p.product_id"
+            <div v-if="products && products.length > 0">
+                <div v-for="p in products" :key="p.product_id"
                 class="flex items-center justify-between bg-zinc-800 p-4 text-zinc-200 border-t border-zinc-700 hover:bg-zinc-700/30 transition-colors">
                 <ItemList 
                     :name="p.name" 
@@ -166,7 +167,9 @@ onMounted(() => {
                     :stock="p.stock"
                     @edit="openModalEditar(p)" 
                     @delete="openModalDelete(p.product_id)" />
+                </div>
             </div>
+            <div v-else class="text-white p-10 text-center">Cargando...</div>
         </div>
 
         <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50" v-if="modalAgregar">
