@@ -1,6 +1,6 @@
 <script setup>
 import { ref, reactive, onMounted } from 'vue'
-import ItemList from '../components/ItemList.vue'
+import ItemListProduct from '../components/ItemListProduct.vue'
 import { productService } from '../services/productService'
 
 const products = ref([])
@@ -100,7 +100,7 @@ onMounted(getProduct)
             <div v-if="products && products.length > 0">
                 <div v-for="p in products" :key="p.product_id"
                     class="flex items-center justify-between bg-zinc-800 p-4 text-zinc-200 border-t border-zinc-700 hover:bg-zinc-700/30 transition-colors">
-                    <ItemList 
+                    <ItemListProduct 
                         :name="p.name" 
                         :description="p.description" 
                         :price="p.price" 
