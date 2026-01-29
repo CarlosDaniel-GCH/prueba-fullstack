@@ -1,28 +1,78 @@
-# Prueba-fullstack
+# 🚀 Prueba Técnica: Fullstack E-commerce (Laravel + Vue.js)
 
-Prueba tecnica laravel Full Stack + Vue.js para Overskull
+Este proyecto es una aplicación de comercio electrónico desarrollada como parte de la evaluación técnica para Overskull. La solución integra un backend robusto en Laravel con un frontend dinámico y reactivo en Vue.js.
 
-## Instalacion
+## 🛠️ Tecnologías Utilizadas
 
-### frontend
+- Backend: Laravel (PHP)
+- Frontend: Vue.js + Vite/Webpack
+- Base de Datos: MySQL
+- Gestión de Paquetes: Composer & NPM
 
-- Sigue estos pasos
-1. Ir a client: cd client
-2. Dependencias: npm install
+## ⚙️ Instalación y Configuración
 
-### backend 
+Sigue estos pasos para poner en marcha el entorno de desarrollo local.
 
-- crear una base de datos vacia llamada "ecommerce" y sigue estos pasos
+### 1. Requisitos Previos
+- PHP >= 8.x
+- Composer
+- Node.js & NPM
+- Servidor MySQL (XAMPP, Laragon o Docker)
 
-1. Ir a server: cd server
-2. Dependencias: composer install
-3. Migraciones: php artisan migrate
-4. Servidor: php artisan serve
+### 2. Configuración del Backend (Server)
 
+```bash
+# Acceder al directorio:
+cd server
+```
 
-### Puntos que faltaron
-- [ ] Desplegar formulario al hacerle click al boton de agregar
-- [ ] Mejorar los estilos de la tabla
-- [ ] Funcion para listar categorias
+```bash
+# Instalar dependencias:
+composer install
+```
+
+```bash
+# Configurar el entorno:
+cp .env.example .env
+php artisan key:generate
+```
+
+```bash
+# Ejecutar migraciones:
+php artisan migrate
+```
+
+```bash
+# Iniciar servidor:
+php artisan serve
+```
+
+### 3. Configuración del Frontend (Client)
+
+```bash
+# Acceder al directorio:
+cd client
+```
+
+```bash
+# Instalar dependencias:
+npm install
+```
+
+```bash
+# Iniciar modo desarrollo:
+npm run dev
+```
+
+## 📁 Estructura del Proyecto
+
+- /client: Interfaz de usuario construida con Vue.js, consumiendo los endpoints del backend.
+- /server: API REST construida con Laravel, encargada de la lógica de negocio y persistencia.
+
+### Nota: Asegúrate de que el servidor de Laravel esté corriendo en el puerto por defecto (http://127.0.0.1:8000) para que el frontend pueda comunicarse correctamente con la API.
+
+### Puntos que faltan
+
 - [ ] Agregarle Toast despues de cada accion
-- [ ] Separar las funciones en una carpeta services
+- [ ] Agregar seeders
+- [ ] Mejorar el diseño
