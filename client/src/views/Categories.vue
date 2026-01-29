@@ -111,7 +111,7 @@ onMounted(getCategory)
         <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50" v-if="modalAgregar">
             <form @submit.prevent="handleSubmit" class="flex flex-col gap-4 bg-zinc-800 border border-zinc-500 px-4 py-6 max-w-lg rounded-lg text-zinc-200 relative">
                 <button type="button" class="absolute top-2 right-4 text-2xl" @click="closeModalAgregar"><i class="fa-solid fa-xmark"></i></button>
-                <h1 class="text-3xl font-bold mb-6">Agregar Categoria</h1>
+                <h1 class="text-3xl font-bold mt-8 mb-4">Agregar Categoria</h1>
                 <div class="flex flex-col text-left">
                     <label>Nombre</label>
                     <input v-model="addCategory.name" type="text" class="p-2 rounded-lg bg-zinc-700" placeholder="Nombre">
@@ -127,7 +127,7 @@ onMounted(getCategory)
         <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50" v-if="modalEditar">
             <form @submit.prevent="handleEdit" class="flex flex-col gap-4 bg-zinc-800 border border-zinc-500 px-4 py-6 max-w-lg rounded-lg text-zinc-200 relative">
                 <button type="button" class="absolute top-2 right-4 text-2xl" @click="closeModalEditar"><i class="fa-solid fa-xmark"></i></button>
-                <h1 class="text-3xl font-bold mb-6">Editar Categoria</h1>
+                <h1 class="text-3xl font-bold mt-8 mb-4">Editar Categoria</h1>
                 <div class="flex flex-col text-left">
                     <label>Nombre</label>
                     <input v-model="editCategory.name" type="text" class="p-2 rounded-lg bg-zinc-700">
