@@ -34,30 +34,39 @@ onMounted(() => {
 
 <template>
     <div class="flex gap-4 text-white">
-        <div class="w-1/3 p-4 rounded-lg bg-zinc-700">Productos Totales: {{ product.length }}</div>
-        <div class="w-1/3 p-4 rounded-lg bg-zinc-700">Categorias Totales: {{ category.length }}</div>
-        <div class="w-1/3 p-4 rounded-lg bg-zinc-700">Fecha: {{ fecha }}</div>
+        <div class="flex flex-col gap-2 w-1/3 p-4 rounded-lg bg-zinc-800 font-bold">
+            <h1 class="flex justify-center">Productos Totales</h1>
+            <span class="flex justify-center text-3xl">{{ product.length }}</span>
+        </div>
+        <div class="flex flex-col gap-2 w-1/3 p-4 rounded-lg bg-zinc-800 font-bold">
+            <h1 class="flex justify-center">Categorias Totales</h1>
+            <span class="flex justify-center text-3xl">{{ category.length }}</span>
+        </div>
+        <div class="flex flex-col gap-2 w-1/3 p-4 rounded-lg bg-zinc-800 font-bold">
+            <h1 class="flex justify-center">Fecha</h1>
+            <span class="flex justify-center text-2xl">{{ fecha }}</span>
+        </div>
     </div>
 
     <div class="flex gap-4 mt-4">
         <div class="w-1/2 text-white">
-            <div class="flex justify-around border border-zinc-500 px-12 py-4 bg-zinc-700">
+            <div class="flex justify-around border border-zinc-500 px-12 py-4 bg-zinc-700 text-zinc-400">
                 <h1 class="w-1/4 font-bold">Categoria</h1>
                 <span class="w-2/4 font-bold">Descripcion</span>
             </div>
-            <div v-for="c in category" class="flex justify-around border border-zinc-500 px-12 py-4 bg-zinc-800 hover:bg-zinc-700">
+            <div v-for="c in category" class="flex justify-around border border-zinc-500 px-12 py-4 bg-zinc-800">
                 <h1 class="w-1/4">{{ c.name }}</h1>
                 <span class="w-2/4">{{ c.description }}</span>
             </div>
         </div>
         
         <div class="w-1/2 text-white">
-            <div class="flex justify-around border border-zinc-500 px-12 py-4 bg-zinc-700">
+            <div class="flex justify-around border border-zinc-500 px-12 py-4 bg-zinc-700  text-zinc-400 ">
                 <h1 class="w-2/4 font-bold">Producto</h1>
                 <span class="w-1/4 font-bold">Precio</span>
                 <span class="w-1/4 font-bold">Stock</span>
             </div>
-            <div v-for="p in product" class="flex justify-around border border-zinc-500 px-12 py-4 bg-zinc-800 hover:bg-zinc-700">
+            <div v-for="p in product" class="flex justify-around border border-zinc-500 px-12 py-4 bg-zinc-800">
                 <h1 class="w-2/4">{{ p.name }}</h1>
                 <span class="w-1/4">{{ p.price }}</span>
                 <span class="w-1/4">{{ p.stock }}</span>

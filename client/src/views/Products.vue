@@ -82,14 +82,14 @@ onMounted(getProduct)
 </script>
 
 <template>
-    <div>
-        <div class="flex gap-4 justify-center items-center mb-6">
-            <h1 class="text-zinc-200 text-3xl mb-4 uppercase font-bold">LISTA DE PRODUCTOS</h1>
-            <button @click="openModalAgregar" class="bg-green-500 rounded-lg px-3 py-2 mb-4 text-white font-bold">Agregar</button>
+    <div class="flex flex-col gap-8">
+        <div class="flex gap-4 justify-center items-center">
+            <h1 class="text-zinc-200 text-3xl uppercase font-bold">LISTA DE PRODUCTOS</h1>
+            <button @click="openModalAgregar" class="bg-green-500 rounded-lg px-3 py-2 text-white font-bold">Agregar</button>
         </div>
 
         <div class="overflow-hidden rounded-lg border border-zinc-700">
-            <div class="flex justify-between bg-zinc-800/50 p-4 text-zinc-400 text-sm uppercase tracking-wider font-bold">
+            <div class="flex justify-between bg-zinc-700 p-4 text-zinc-400 text-sm uppercase tracking-wider font-bold">
                 <span class="w-1/5 flex justify-center">Producto</span>
                 <span class="w-1/5 flex justify-center">Descripción</span>
                 <span class="w-1/5 flex justify-center">Precio</span>
